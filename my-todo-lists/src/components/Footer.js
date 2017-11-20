@@ -7,7 +7,7 @@ import {Divider} from 'semantic-ui-react';
 
 let Footer = ({leftItems}) => (
   <div>
-    <Divider horizontal>leftItems: {leftItems}</Divider>
+    <Divider horizontal>{leftItems} items left</Divider>
     Show:
     {" "}
     <FilterLink filter="SHOW_ALL">
