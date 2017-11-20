@@ -1,8 +1,13 @@
 import React from 'react';
 import FilterLink from '../containers/FilterLink';
+import {connect} from 'react-redux';
+import {Divider} from 'semantic-ui-react';
 
-const Footer = () => (
-  <p>
+
+
+let Footer = ({leftItems}) => (
+  <div>
+    <Divider horizontal>leftItems: {leftItems}</Divider>
     Show:
     {" "}
     <FilterLink filter="SHOW_ALL">
@@ -16,7 +21,17 @@ const Footer = () => (
     <FilterLink filter="SHOW_COMPLETED">
       Completed
     </FilterLink>
-  </p>
+  </div>
 );
+
+const mapStateToProps = (state, ownProps) => {console.log(state.todos.present.length); return({
+  leftItems: state.todos.present
+    .filter(t => t.completed === false)
+    .length
+})};
+
+Footer = connect(
+  mapStateToProps
+)(Footer);
 
 export default Footer;
