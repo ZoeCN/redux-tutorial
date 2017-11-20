@@ -1,7 +1,7 @@
 import React from 'react';
 import {List, Icon} from 'semantic-ui-react';
 
-const Todo = ({ onClick, completed, text }) => (
+const Todo = ({ onClick, deleteTodo, completed, text }) => (
   <List.Item
     onClick={onClick}
     style={{
@@ -10,10 +10,9 @@ const Todo = ({ onClick, completed, text }) => (
   >
     <Icon name='smile' size='large'/>
     <List.Content>
-      <List.Header>
-        {text} 
-      </List.Header>
+      {text} 
     </List.Content>
+    <Icon onClick={deleteTodo} name='delete'></Icon>
   </List.Item>
 );
 
