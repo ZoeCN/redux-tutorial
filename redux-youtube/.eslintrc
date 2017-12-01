@@ -1,0 +1,35 @@
+{
+  "extends": [
+    "google",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    // Additional, per-project rules...
+    "max-len": [
+      "error",
+      150
+    ],
+    "no-console": "off"
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "globals": {
+    "document": false,
+    "require": false,
+    "process": false,
+    "__dirname": false,
+    "module": false,
+    "console": false
+  }
+}
